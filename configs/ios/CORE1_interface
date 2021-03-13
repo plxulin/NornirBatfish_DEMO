@@ -1,0 +1,20 @@
+interface loopback0
+ description Router-id
+ no shut
+ ip address 2.1.2.1 255.255.255.255
+interface e0/1
+ description To BR1
+ no shut
+ ip address 2.12.11.2 255.255.255.0
+interface e0/2
+ description To ACCESS1
+ no shut
+ ip address 2.23.11.2 255.255.255.0
+interface e0/3
+ description To BR2
+ no shut
+ ip address 2.12.21.2 255.255.255.0
+interface e1/0
+ description To ACCESS2
+ no shut
+ ip address 2.23.12.2 255.255.255.0

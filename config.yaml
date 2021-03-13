@@ -1,0 +1,27 @@
+---
+inventory:
+  plugin: SimpleInventory
+  options:
+    host_file: "inventory/hosts.yaml"
+    group_file: "inventory/groups.yaml"
+    defaults_file: "inventory/defaults.yaml"
+  # plugin: NBInventory
+  # options:
+  #   nb_url: "http://192.168.31.201:8000/"
+  #   nb_token: "0123456789abcdef0123456789abcdef01234567"
+  #   use_platform_slug: True
+
+runner: 
+  plugin: ThreadedRunner
+  # plugin: SerialRunner
+  # options:
+  #   num_workers: 1
+
+ssh:
+  config_file: ~/.ssh/config
+
+logging:
+  enabled: True
+  level: INFO
+  log_file: nornir1.log
+  

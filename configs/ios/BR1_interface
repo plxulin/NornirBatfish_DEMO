@@ -1,0 +1,16 @@
+interface loopback0
+ description Router-id
+ no shut
+ ip address 2.1.1.1 255.255.255.255
+interface e0/1
+ description To ISP1
+ no shut
+ ip address 10.12.11.2 255.255.255.0
+interface e0/2
+ description To CORE1
+ no shut
+ ip address 2.12.11.1 255.255.255.0
+interface e0/3
+ description To CORE2
+ no shut
+ ip address 2.12.12.1 255.255.255.0

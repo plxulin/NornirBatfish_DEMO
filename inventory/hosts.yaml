@@ -1,0 +1,276 @@
+localhost:
+    hostname: 127.0.0.1
+
+ISP1-PE1:
+    hostname: 10.0.137.11
+    groups:
+        - IOS
+        - ISP1
+    data:
+        interfaces:
+            loopback0:
+                desc: Router-id
+                state: no shut
+                address: 1.1.1.1
+                mask: 255.255.255.255
+            e0/1:
+                desc: To ISP2
+                state: no shut
+                address: 10.13.13.1
+                mask: 255.255.255.0
+            e0/2:
+                desc: To BR1
+                state: no shut
+                address: 10.12.11.1 
+                mask: 255.255.255.0
+
+ISP2-PE2:
+    hostname: 10.0.137.12
+    groups:
+        - IOS
+        - ISP2
+    data:
+        interfaces:
+            loopback0:
+                desc: Router-id
+                state: no shut
+                address: 3.1.1.1
+                mask: 255.255.255.255
+            e0/1:
+                desc: To ISP1
+                state: no shut
+                address:  10.13.13.3
+                mask: 255.255.255.0
+            e0/2:
+                desc: To BR2
+                state: no shut
+                address: 10.23.21.1
+                mask: 255.255.255.0
+BR1:
+    hostname: 10.0.137.13
+    groups:
+        - IOS
+        - BR
+        - MYSITE
+    data:
+        interfaces:
+            loopback0:
+                desc: Router-id
+                state: no shut
+                address: 2.1.1.1
+                mask: 255.255.255.255
+            e0/1:
+                desc: To ISP1
+                state: no shut
+                address: 10.12.11.2
+                mask: 255.255.255.0
+            e0/2:
+                desc: To CORE1
+                state: no shut
+                address: 2.12.11.1
+                mask: 255.255.255.0
+            e0/3:
+                desc: To CORE2
+                state: no shut
+                address: 2.12.12.1
+                mask: 255.255.255.0
+
+
+BR2:
+    hostname: 10.0.137.14
+    groups:
+        - IOS
+        - BR
+        - MYSITE
+    data:
+        interfaces:
+            loopback0:
+                desc: Router-id
+                state: no shut
+                address: 2.1.1.2
+                mask: 255.255.255.255
+            e0/1:
+                desc: To ISP2
+                state: no shut
+                address: 10.23.21.2
+                mask: 255.255.255.0
+            e0/2:
+                desc: To CORE2
+                state: no shut
+                address: 2.12.22.1
+                mask: 255.255.255.0
+            e0/3:
+                desc: To CORE1
+                state: no shut
+                address: 2.12.21.1
+                mask: 255.255.255.0
+
+CORE1:
+    hostname: 10.0.137.15
+    groups:
+        - IOS
+        - CORE
+        - MYSITE
+    data:
+        interfaces:
+            loopback0:
+                desc: Router-id
+                state: no shut
+                address: 2.1.2.1
+                mask: 255.255.255.255
+            e0/1:
+                desc: To BR1
+                state: no shut
+                address: 2.12.11.2
+                mask: 255.255.255.0
+            e0/2:
+                desc: To ACCESS1
+                state: no shut
+                address: 2.23.11.2
+                mask: 255.255.255.0
+            e0/3:
+                desc: To BR2
+                state: no shut
+                address: 2.12.21.2
+                mask: 255.255.255.0
+            e1/0:
+                desc: To ACCESS2
+                state: no shut
+                address: 2.23.12.2
+                mask: 255.255.255.0
+            # e1/1:
+            #     desc: To CORE2
+            #     state: no shut
+            #     address: 
+            #     mask: 
+
+CORE2:
+    hostname: 10.0.137.16
+    groups:
+        - IOS
+        - CORE
+        - MYSITE
+    data:
+        interfaces:
+            loopback0:
+                desc: Router-id
+                state: no shut
+                address: 2.1.2.2
+                mask: 255.255.255.255
+            e0/1:
+                desc: To BR2
+                state: no shut
+                address: 2.12.22.2
+                mask: 255.255.255.0
+            e0/2:
+                desc: To ACCESS2
+                state: no shut
+                address: 2.23.22.2
+                mask: 255.255.255.0
+            e0/3:
+                desc: To BR1
+                state: no shut
+                address: 2.12.12.2
+                mask: 255.255.255.0
+            e1/0:
+                desc: To ACCESS1
+                state: no shut
+                address: 2.23.21.2
+                mask: 255.255.255.0
+            # e1/1:
+            #     desc: To CORE1
+            #     state: no shut
+            #     address: 
+            #     mask:
+
+ACCESS1:
+    hostname: 10.0.137.17
+    groups:
+        - IOS
+        - ACCESS
+        - MYSITE
+    data:
+        interfaces:
+            loopback0:
+                desc: Router-id
+                state: no shut
+                address: 2.1.3.1
+                mask: 255.255.255.255
+            e0/1:
+                desc: To CORE1
+                state: no shut
+                address: 2.23.11.3
+                mask: 255.255.255.0
+            e0/2:
+                desc: To HOST
+                state: no shut
+                address: 2.34.101.3
+                mask: 255.255.255.0
+            e0/3:
+                desc: To CORE2
+                state: no shut
+                address: 2.23.21.3
+                mask: 255.255.255.0
+
+ACCESS2:
+    hostname: 10.0.137.18
+    groups:
+        - IOS
+        - ACCESS
+        - MYSITE
+    data:
+        interfaces:
+            loopback0:
+                desc: Router-id
+                state: no shut
+                address: 2.1.3.2
+                mask: 255.255.255.255
+            e0/1:
+                desc: To CORE2
+                state: no shut
+                address: 2.23.22.3
+                mask: 255.255.255.0
+            e0/2:
+                desc: To HOST
+                state: no shut
+                address: 2.34.201.3
+                mask: 255.255.255.0
+            e0/3:
+                desc: To CORE1
+                state: no shut
+                address: 2.23.12.3
+                mask: 255.255.255.0
+            
+HOST:
+    hostname: 10.0.137.19
+    groups:
+        - IOS
+        - HOST
+        - MYSITE-inside
+    data:
+        interfaces:
+            loopback0:
+                desc: Router-id
+                state: no shut
+                address: 2.1.4.1
+                mask: 255.255.255.255
+            e0/1:
+                desc: To ACCESS1
+                state: no shut
+                address: 2.34.101.4
+                mask: 255.255.255.0
+            e0/2:
+                desc: To ACCESS2
+                state: no shut
+                address: 2.34.201.4
+                mask: 255.255.255.0
+            e0/3:
+                desc: To host-1
+                state: no shut
+                address: 2.128.0.2
+                mask: 255.255.255.252
+            e1/0:
+                desc: To host-2
+                state: no shut
+                address: 2.128.1.2
+                mask: 255.255.255.252

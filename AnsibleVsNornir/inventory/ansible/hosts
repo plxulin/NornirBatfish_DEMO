@@ -1,0 +1,6 @@
+[all]
+host1 ansible_host=172.21.58.210
+
+[all:vars]
+ansible_user=vagrant
+ansible_ssh_pass=vagrant

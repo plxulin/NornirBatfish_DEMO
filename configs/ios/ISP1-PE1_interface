@@ -1,0 +1,12 @@
+interface loopback0
+ description Router-id
+ no shut
+ ip address 1.1.1.1 255.255.255.255
+interface e0/1
+ description To ISP2
+ no shut
+ ip address 10.13.13.1 255.255.255.0
+interface e0/2
+ description To BR1
+ no shut
+ ip address 10.12.11.1 255.255.255.0

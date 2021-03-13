@@ -1,0 +1,55 @@
+---
+# localtion
+ISP1:
+    data:
+        domain: west.com
+        asn: 65011
+
+ISP2:
+    data:
+        domain: east.com
+        asn: 65012
+
+MYSITE:
+    data:
+        domain: mysite.com
+        asn: 2
+
+MYSITE-inside:
+    data:
+        domain: mysite.com
+        asn: 65001
+
+# device function type
+BR:
+    data:
+        domain: br.mysite.com
+
+CORE:
+    data:
+        domain: core.mysite.com
+
+ACCESS:
+    data:
+        domain: access.mysite.com
+
+HOST:
+    data:
+        domain: host.mysite.com
+        
+# os type
+IOS:
+    platform: ios
+    port: 22
+    connection_options:
+        netmiko:
+            extras:
+                secret: Cisco!123
+                
+        napalm:
+            extras:
+                optional_args:
+                    global_delay_factor: 2
+                    ssh_config_file: ~/.ssh/config
+                    secret: Cisco!123
+                    # fast_cli: True
