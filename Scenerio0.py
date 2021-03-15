@@ -43,10 +43,6 @@ def batfish_tasks(task):
     task.run(
         task = BF_initIssues 
     )
-    
-    task.run(
-        task = BF_assert_no_undefined_referenes
-    )
 
 
 result = nr.run(

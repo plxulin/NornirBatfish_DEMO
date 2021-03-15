@@ -43,6 +43,9 @@ IOS:
     port: 22
     connection_options:
         netmiko:
+            # platform: <>
+            # username: <>
+            # password: <>
             extras:
                 secret: Cisco!123
                 

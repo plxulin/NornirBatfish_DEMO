@@ -1,0 +1,9 @@
+2021-03-14 20:14:49,481 -  nornir.core -  WARNING -        run() - Task 'hello_world' has not been run – 0 hosts selected
+2021-03-14 20:15:14,282 -  nornir.core -  WARNING -        run() - Task 'hello_world' has not been run – 0 hosts selected
+2021-03-14 20:15:14,295 -  nornir.core -  WARNING -        run() - Task 'Saying goodbye in a very friendly manner' has not been run – 0 hosts selected
+2021-03-14 20:15:14,307 -  nornir.core -  WARNING -        run() - Task 'Counting to 5 while being very polite' has not been run – 0 hosts selected
+2021-03-14 20:15:14,395 -  nornir.core -  WARNING -        run() - Task 'greet_and_count' has not been run – 0 hosts selected
+2021-03-14 20:15:36,217 -  nornir.core -     INFO -        run() - Running task 'hello_world' with args {} on 12 hosts
+2021-03-14 20:15:44,244 -  nornir.core -     INFO -        run() - Running task 'Saying goodbye in a very friendly manner' with args {'text': 'buhbye!'} on 12 hosts
+2021-03-14 20:15:52,830 -  nornir.core -     INFO -        run() - Running task 'Counting to 5 while being very polite' with args {'number': 5} on 12 hosts
+2021-03-14 20:16:18,993 -  nornir.core -  WARNING -        run() - Task 'greet_and_count' has not been run – 0 hosts selected

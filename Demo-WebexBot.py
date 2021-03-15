@@ -1,5 +1,4 @@
 """A simple bot script, built on Flask.
-autossh -NR ali:8010:localhost:8080 root@ali &
 """
 from builtins import *
 from flask import Flask, request
